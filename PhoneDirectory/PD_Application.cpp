@@ -84,16 +84,20 @@ void do_lookup_entry(Phone_Directory& the_directory)
 		cout << name << " is not in the directory\n";
 	}
 }
-
+//William Tadlock
 void do_remove_entry(Phone_Directory& the_directory) // Exercise 1.8: please complete the function do_remove_entry - Ed/Kent
 {
 	string name;
 	cout << "Enter name: ";
 	getline(cin, name);
 	// Complete the rest of this function 
-	
+	string removed = the_directory.remove_entry(name);//tries to remove name from directory and stores the returned string
+	if (removed != "")
+		cout << "Number was successfully removed" << endl;
+	else
+		cout << "Number was not successfully removed" << endl;
 }
-
+//William Tadlock
 void do_save(Phone_Directory& the_directory)
 {
 	the_directory.save();
